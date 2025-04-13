@@ -3,3 +3,9 @@ listOne x = [x]
 
 listTwo :: [a] -> a
 listTwo (x : xs) = x
+
+asc :: (Ord t, Num t) => t -> t -> [t]
+asc n m
+  | m < n = []
+  | m == n = [m]
+  | m > n = n : asc (n + 1) m
