@@ -3,6 +3,7 @@ data Tree a
   | Empty
   deriving (Show)
 
+simpleTree :: Tree String
 simpleTree =
   Node
     "parent"
