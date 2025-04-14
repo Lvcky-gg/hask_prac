@@ -1,3 +1,5 @@
+import Data.List
+
 listOne :: a -> [a]
 listOne x = [x]
 
@@ -9,3 +11,14 @@ asc n m
   | m < n = []
   | m == n = [m]
   | m > n = n : asc (n + 1) m
+
+getHead :: [a] -> a
+getHead [] = error "Empty list"
+getHead (x : _) = x
+
+getTail :: [a] -> [a]
+getTail [] = error "Empty list"
+getTail (_ : xs) = xs
+
+forLoop :: p -> (a -> b) -> [a] -> [b]
+forLoop n = map
