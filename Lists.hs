@@ -22,3 +22,9 @@ getTail (_ : xs) = xs
 
 forLoop :: p -> (a -> b) -> [a] -> [b]
 forLoop n = map
+
+printList :: (Show a) => [a] -> IO ()
+printList [] = return ()
+printList (x : xs) = do
+  print x
+  printList xs
