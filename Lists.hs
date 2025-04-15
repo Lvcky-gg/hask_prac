@@ -46,3 +46,9 @@ elems _ [] = False
 elems y (x : xs)
   | y == x = True
   | otherwise = elems y xs
+
+nubs :: (Eq a) => [a] -> [a]
+nubs [] = []
+nubs (x : xs)
+  | x `elem` xs = nub xs
+  | otherwise = x : nub xs
