@@ -30,4 +30,4 @@ printList (x : xs) = do
   printList xs
 
 comprehension :: (Ord a, Num a) => [a] -> [a]
-comprehension (x : xs) = [2 * x | x <- xs, x > 1]
+comprehension x = [2 * x | x <- x, x > 1]
