@@ -40,3 +40,9 @@ evens [] = []
 evens (x : xs)
   | even x = x : evens xs
   | otherwise = evens xs
+
+elems :: (Eq a) => a -> [a] -> Bool
+elems _ [] = False
+elems y (x : xs)
+  | y == x = True
+  | otherwise = elems y xs
