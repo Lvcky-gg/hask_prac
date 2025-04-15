@@ -31,3 +31,12 @@ printList (x : xs) = do
 
 comprehension :: (Ord a, Num a) => [a] -> [a]
 comprehension x = [2 * x | x <- x, x > 1]
+
+sumUp :: (Num a) => [a] -> a
+sumUp (x : xs) = x + sum xs
+
+evens :: (Integral a) => [a] -> [a]
+evens [] = []
+evens (x : xs)
+  | even x = x : evens xs
+  | otherwise = evens xs
