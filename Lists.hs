@@ -28,3 +28,6 @@ printList [] = return ()
 printList (x : xs) = do
   print x
   printList xs
+
+comprehension :: (Ord a, Num a) => [a] -> [a]
+comprehension (x : xs) = [2 * x | x <- xs, x > 1]
