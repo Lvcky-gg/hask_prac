@@ -52,3 +52,16 @@ nubs [] = []
 nubs (x : xs)
   | x `elem` xs = nub xs
   | otherwise = x : nub xs
+
+isAsc :: (Ord a) => [a] -> Bool
+isAsc [] = True
+isAsc [x] = True
+isAsc (x : y : xs)
+  | x > y = False
+  | otherwise = isAsc (y : xs)
+
+hasPath :: [(Int, Int)] -> Int -> Int -> Bool
+hasPath [] _ _ = False
+hasPath ((x, y) : xs) a b
+  | x == a && y == b = True
+  | otherwise = hasPath xs a b
